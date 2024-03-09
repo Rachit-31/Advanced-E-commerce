@@ -7,6 +7,8 @@ import Title from "../../components/common/Title";
 import { FormElement, Input, Textarea } from "../../styles/form";
 import { BaseButtonGreen, BaseButtonWhitesmoke } from "../../styles/button";
 import { defaultTheme } from "../../styles/themes/default";
+import axios from "axios";
+import { useEffect, useRef } from "react";
 
 const AddressScreenWrapper = styled.main`
   .form-elem-control {
@@ -26,6 +28,41 @@ const breadcrumbItems = [
 ];
 
 const AddressScreen = () => {
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const countryRef = useRef();
+  const companyRef = useRef();
+  const streetRef = useRef();
+  const cityRef = useRef();
+  const stateRef = useRef();
+  const phoneRef = useRef();
+  const postalRef = useRef();
+  const instructionRef = useRef();
+
+  const handleAddress = async () => {
+    const firstName = firstNameRef.current.value;
+    const lastName = lastNameRef.current.value;
+    const country = countryRef.current.value;
+    const company = companyRef.current.value;
+    const street = streetRef.current.value;
+    const city = cityRef.current.value;
+    const state = stateRef.current.value;
+    const phone = phoneRef.current.value;
+    const postal = postalRef.current.value;
+    const instruction = instructionRef.current.value;
+    try {
+      const token = localStorage.getItem("accessToken");
+      const response = await axios.post("http://localhost:3000/api/address", { firstName, lastName, country, company, street, city, state, phone, postal, instruction }, {
+        headers: {
+          Authorization: token
+        }
+      });
+    }
+    catch (err) {
+      console.log("Error:", err);
+    }
+  }
+
   return (
     <AddressScreenWrapper className="page-py-spacing">
       <Container>
@@ -35,7 +72,7 @@ const AddressScreen = () => {
           <UserContent>
             <Title titleText={"My Account"} />
             <h4 className="title-sm">Add Address</h4>
-            <form>
+            <form onSubmit={handleAddress}>
               <div className="form-wrapper">
                 <FormElement>
                   <label
@@ -45,6 +82,7 @@ const AddressScreen = () => {
                     First Name*
                   </label>
                   <Input
+                    ref={firstNameRef}
                     type="text"
                     className="form-elem-control"
                     placeholder="First Name"
@@ -58,6 +96,7 @@ const AddressScreen = () => {
                     Last Name*
                   </label>
                   <Input
+                    ref={lastNameRef}
                     type="text"
                     className="form-elem-control"
                     placeholder="Last Name"
@@ -71,6 +110,7 @@ const AddressScreen = () => {
                     Contry / Region
                   </label>
                   <Input
+                    ref={countryRef}
                     type="text"
                     className="form-elem-control"
                     placeholder="Country/Region"
@@ -84,6 +124,7 @@ const AddressScreen = () => {
                     Company Name*
                   </label>
                   <Input
+                    ref={companyRef}
                     type="text"
                     className="form-elem-control"
                     placeholder="Company (optional)"
@@ -97,6 +138,7 @@ const AddressScreen = () => {
                     Street Address*
                   </label>
                   <Input
+                    ref={streetRef}
                     type="text"
                     className="form-elem-control"
                     placeholder="House number and street name"
@@ -107,22 +149,10 @@ const AddressScreen = () => {
                     htmlFor=""
                     className="form-label font-semibold text-base"
                   >
-                    Apt, suite, unit*
-                  </label>
-                  <Input
-                    type="text"
-                    className="form-elem-control"
-                    placeholder="apartment, suite, unit,etc. (optional)"
-                  />
-                </FormElement>
-                <FormElement>
-                  <label
-                    htmlFor=""
-                    className="form-label font-semibold text-base"
-                  >
                     City*
                   </label>
                   <Input
+                    ref={cityRef}
                     type="text"
                     className="form-elem-control"
                     placeholder="Town / City"
@@ -135,10 +165,12 @@ const AddressScreen = () => {
                   >
                     State*
                   </label>
-                  <select className="form-elem-control" name="" id="">
-                    <option value="">State 1</option>
-                    <option value="">State 2</option>
-                  </select>
+                  <Input
+                    ref={stateRef}
+                    type="text"
+                    className="form-elem-control"
+                    placeholder="Town / City"
+                  />
                 </FormElement>
                 <FormElement>
                   <label
@@ -148,7 +180,8 @@ const AddressScreen = () => {
                     Phone*
                   </label>
                   <Input
-                    type="text"
+                    ref={phoneRef}
+                    type="tel"
                     className="form-elem-control"
                     placeholder="Phone"
                   />
@@ -161,7 +194,8 @@ const AddressScreen = () => {
                     Postal Code*
                   </label>
                   <Input
-                    type="text"
+                    ref={postalRef}
+                    type="number"
                     className="form-elem-control"
                     placeholder="Postal Code"
                   />
@@ -173,32 +207,15 @@ const AddressScreen = () => {
                   >
                     Delivery Instruction
                   </label>
-                  <Textarea
+                  <Input
+                    ref={instructionRef}
                     className="form-elem-control"
                     placeholder="Delivery Instruction"
                     name=""
                     id=""
-                  ></Textarea>
+                  ></Input>
                 </FormElement>
               </div>
-              <FormElement className="form-check-elem flex items-center">
-                <div className="form-elem-checkbox">
-                  <input type="checkbox" />
-                  <span className="checkmark flex items-center justify-center">
-                    <i className="bi bi-check-lg"></i>
-                  </span>
-                </div>
-                <span>Set as default shipping address</span>
-              </FormElement>
-              <FormElement className="form-check-elem flex items-center">
-                <div className="form-elem-checkbox">
-                  <input type="checkbox" />
-                  <span className="checkmark flex items-center justify-center">
-                    <i className="bi bi-check-lg"></i>
-                  </span>
-                </div>
-                <span>Set as default billing address</span>
-              </FormElement>
               <div className="form-btns flex">
                 <BaseButtonGreen type="submit">Save</BaseButtonGreen>
                 <BaseButtonWhitesmoke type="button">

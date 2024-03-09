@@ -37,7 +37,7 @@ const ProductCardWrapper = styled(Link)`
 
 const ProductItem = ({ product }) => {
   return (
-    <ProductCardWrapper key={product.id} to="/product/details">
+    <ProductCardWrapper key={product.id} to={product.link}>
       <div className="product-img">
         <img className="object-fit-cover" src={product.imgSource} />
         <button

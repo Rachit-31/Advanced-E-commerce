@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Container } from "../../styles/styles";
 import Breadcrumb from "../../components/common/Breadcrumb";
-import { product_one } from "../../data/data";
+import { product_three } from "../../data/data";
 import ProductPreview from "../../components/product/ProductPreview";
 import { Link } from "react-router-dom";
 import { BaseLinkGreen } from "../../styles/button";
@@ -180,14 +180,14 @@ const ProductColorWrapper = styled.div`
   }
 `;
 
-const ProductDetailsScreen = () => {
+const ProductDetailsScreen3 = () => {
   const stars = Array.from({ length: 5 }, (_, index) => (
     <span
       key={index}
       className={`text-yellow ${
-        index < Math.floor(product_one.rating)
+        index < Math.floor(product_three.rating)
           ? "bi bi-star-fill"
-          : index + 0.5 === product_one.rating
+          : index + 0.5 === product_three.rating
           ? "bi bi-star-half"
           : "bi bi-star"
       }`}
@@ -204,9 +204,9 @@ const ProductDetailsScreen = () => {
       <Container>
         <Breadcrumb items={breadcrumbItems} />
         <DetailsContent className="grid">
-          <ProductPreview previewImages={product_one.previewImages} />
+          <ProductPreview previewImages={product_three.previewImages} />
           <ProductDetailsWrapper>
-            <h2 className="prod-title">{product_one.title}</h2>
+            <h2 className="prod-title">{product_three.title}</h2>
             <ProductSizeWrapper>
               <div className="prod-size-top flex items-center flex-wrap">
                 <p className="text-lg font-semibold text-outerspace">
@@ -217,7 +217,7 @@ const ProductDetailsScreen = () => {
                 </Link>
               </div>
               <div className="prod-size-list flex items-center">
-                {product_one.sizes.map((size, index) => (
+                {product_three.sizes.map((size, index) => (
                   <div className="prod-size-item" key={index}>
                     <input type="radio" name="size" />
                     <span className="flex items-center justify-center font-medium text-outerspace text-sm">
@@ -234,7 +234,7 @@ const ProductDetailsScreen = () => {
                 </p>
               </div>
               <div className="prod-colors-list flex items-center">
-                {product_one?.colors?.map((color, index) => (
+                {product_three?.colors?.map((color, index) => (
                   <div className="prod-colors-item" key={index}>
                     <input type="radio" name="colors" />
                     <span
@@ -257,7 +257,7 @@ const ProductDetailsScreen = () => {
                 <span className="prod-add-btn-text">Add to cart</span>
               </BaseLinkGreen>
               <span className="prod-price text-xl font-bold text-outerspace">
-                {currencyFormat(product_one.price)}
+                {currencyFormat(product_three.price)}
               </span>
             </div>
             <ProductServices />
@@ -269,4 +269,4 @@ const ProductDetailsScreen = () => {
   );
 };
 
-export default ProductDetailsScreen;
+export default ProductDetailsScreen3;

@@ -78,21 +78,12 @@ const SignInScreen = () => {
         <Container>
           <div className="form-grid-content">
             <div className="form-grid-left">
-              {/* <img src={staticImages.form_img1} className="object-fit-cover" /> */}
+              <img src={staticImages.form_img1} className="object-fit-cover" />
             </div>
             <div className="form-grid-right">
               <FormTitle>
                 <h3>Sign In</h3>
               </FormTitle>
-              <AuthOptions />
-              <div className="form-separator flex items-center justify-center">
-                <span className="separator-line"></span>
-                <span className="separator-text inline-flex items-center justify-center text-white">
-                  OR
-                </span>
-                <span className="separator-line"></span>
-              </div>
-
               <form onSubmit={handleLogin}>
                 <FormElement>
                   <label htmlFor="" className="form-elem-label">

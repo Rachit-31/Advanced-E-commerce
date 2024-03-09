@@ -82,31 +82,11 @@ const OrderListScreen = () => {
                 >
                   Active
                 </button>
-                <button
-                  type="button"
-                  className="order-tabs-head text-xl italic"
-                  data-id="cancelled"
-                >
-                  Cancelled
-                </button>
-                <button
-                  type="button"
-                  className="order-tabs-head text-xl italic"
-                  data-id="completed"
-                >
-                  Completed
-                </button>
               </div>
 
               <div className="order-tabs-contents">
                 <div className="order-tabs-content" id="active">
                     <OrderItemList orders = {orderData} />
-                </div>
-                <div className="order-tabs-content" id="cancelled">
-                    Cancelled content
-                </div>
-                <div className="order-tabs-content" id="completed">
-                    Completed content
                 </div>
               </div>
             </div>

@@ -62,6 +62,7 @@ const breadcrumbItems = [
 
 const AccountScreen = () => {
   const [user, setUser] = useState();
+  const [add, setAdd] = useState();
   const navigate = useNavigate();
       useEffect(() => {
         const authenticateUser = async () => {
@@ -76,8 +77,9 @@ const AccountScreen = () => {
                         Authorization: token
                     }
                 });
-                console.log(response.data.user);
-                setUser(response.data.user);
+              console.log(response.data.user);
+              setUser(response.data.user);
+              setAdd(response.data.user.addressess)
             }
             catch (err) {
                 console.log("Error:", err);
@@ -85,7 +87,7 @@ const AccountScreen = () => {
         }
         authenticateUser();
       }, []);
-    
+      
   return (
     <>
       {user && (
@@ -171,21 +173,14 @@ const AccountScreen = () => {
                   <h4 className="title-sm">My Contact Addresss</h4>
                   <BaseLinkGreen to="/account/add">Add Address</BaseLinkGreen>
                   <div className="address-list grid">
-                    <div className="address-item grid">
+                    {add.map(item => (
+                      <div className="address-item grid">
                       <p className="text-outerspace text-lg font-semibold address-title">
-                        Richard Doe
+                        {item.firstName}
                       </p>
                       <p className="text-gray text-base font-medium address-description">
-                        1/4 Watson Street Flat, East Coastal Road, Ohio City
+                       {item.street}, {item.city}, {item.state}
                       </p>
-                      <ul className="address-tags flex flex-wrap">
-                        <li className="text-gray text-base font-medium inline-flex items-center justify-center">
-                          Home
-                        </li>
-                        <li className="text-gray text-base font-medium inline-flex items-center justify-center">
-                          Default billing address
-                        </li>
-                      </ul>
                       <div className="address-btns flex">
                         <Link
                           to="/"
@@ -202,21 +197,20 @@ const AccountScreen = () => {
                         </Link>
                       </div>
                     </div>
-
+                    ))}
                     <div className="address-item grid">
                       <p className="text-outerspace text-lg font-semibold address-title">
-                        Richard Doe
+                        {user.firstName}
                       </p>
                       <p className="text-gray text-base font-medium address-description">
-                        1/4 Watson Street Flat, East Coastal Road, Ohio City
+                       {user.street}, {user.city}, {user.state}
                       </p>
                       <ul className="address-tags flex flex-wrap">
-                        <li className="text-gray text-base font-medium inline-flex items-center justify-center">
-                          Home
-                        </li>
+                        {user.defaultAdd && (
                         <li className="text-gray text-base font-medium inline-flex items-center justify-center">
                           Default billing address
                         </li>
+                        )}
                       </ul>
                       <div className="address-btns flex">
                         <Link

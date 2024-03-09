@@ -4,27 +4,22 @@ const navMenuData = [
   {
     id: "nav-menu-1",
     menuLink: "/",
-    menuText: "Shop",
-  },
-  {
-    id: "nav-menu-2",
-    menuLink: "/",
-    menuText: "Men",
+    menuText: "Home",
   },
   {
     id: "nav-menu-3",
-    menuLink: "/",
-    menuText: "Women",
+    menuLink: "/product",
+    menuText: "Try VitueAI",
   },
   {
     id: "nav-menu-4",
-    menuLink: "/",
-    menuText: "Combos",
+    menuLink: "/product",
+    menuText: "Product",
   },
   {
     id: "nav-menu-5",
     menuLink: "/",
-    menuText: "Fashion",
+    menuText: "Contact",
   },
 ];
 
@@ -65,7 +60,7 @@ const bannerData = [
   {
     id: "banner-1",
     topText: "T-shirt / Tops",
-    titleText: "Summer Value Pack",
+    titleText: "Step into the Future: AI Virtual Try-On!",
     bottomText: "cool / colorful / comfy",
     buttonLink: "/",
     buttonText: "Shop Now",
@@ -73,8 +68,8 @@ const bannerData = [
   },
   {
     id: "banner-2",
-    topText: "Quality / Branded",
-    titleText: "Season Of Offers",
+    topText: "Experience the Future:",
+    titleText: "Try Before You Buy",
     bottomText: "offers / heavy discount / coupons",
     buttonLink: "/",
     buttonText: "Shop Now",
@@ -82,8 +77,8 @@ const bannerData = [
   },
   {
     id: "banner-3",
-    topText: "Seasonal Attire / Collection",
-    titleText: "New Arrivals & Special",
+    topText: "Upgrade Your Shopping Experience",
+    titleText: "Shop Smarter, Shop Better",
     bottomText: "stylish / trendy",
     buttonLink: "/",
     buttonText: "Shop Now",
@@ -122,11 +117,7 @@ const featuredData = [
 ];
 
 const newArrivalData = [
-  {
-    id: "new-arrival-1",
-    imgSource: staticImages.product1,
-    title: "Knitted Joggers",
-  },
+
   {
     id: "new-arrival-2",
     imgSource: staticImages.product2,
@@ -207,138 +198,38 @@ const products = [
     id: 1,
     imgSource: staticImages.product1,
     title: "Active wear",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
+    brand: "US Polo",
+    price: 250.0,
+    link:"/product/details/1"
+
   },
   {
     id: 2,
     imgSource: staticImages.product2,
     title: "Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
+    brand: "Peter England",
+    price: 500.0,
+    link:"/product/details/2"
   },
   {
     id: 3,
     imgSource: staticImages.product3,
     title: "Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
+    brand: "Tommy Hilfiger",
+    price: 450.0,
+    link:"/product/details/3"
   },
   {
     id: 4,
     imgSource: staticImages.product4,
     title: "Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 5,
-    imgSource: staticImages.product5,
-    title: "Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 6,
-    imgSource: staticImages.product6,
-    title: "Printed T-Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 7,
-    imgSource: staticImages.product7,
-    title: "Plain T-Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 8,
-    imgSource: staticImages.product8,
-    title: "Polo T-Shirt",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 9,
-    imgSource: staticImages.product9,
-    title: "Hoddies & Sweatshirt",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 10,
-    imgSource: staticImages.product10,
-    title: "Jeans",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 11,
-    imgSource: staticImages.product11,
-    title: "Boxers",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 12,
-    imgSource: staticImages.product12,
-    title: "Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 13,
-    imgSource: staticImages.product13,
-    title: "Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 14,
-    imgSource: staticImages.product14,
-    title: "Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 15,
-    imgSource: staticImages.product15,
-    title: "Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 16,
-    imgSource: staticImages.product16,
-    title: "Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 17,
-    imgSource: staticImages.product17,
-    title: "Printed T-Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 18,
-    imgSource: staticImages.product18,
-    title: "Plain T-Shirts",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
-  },
-  {
-    id: 19,
-    imgSource: staticImages.product19,
-    title: "Polo T-Shirt",
-    brand: "Jhanvi’s Brand",
-    price: 123.0,
+    brand: "Levis",
+    price: 550.0,
+    link:"/product/details/4"
   },
 ];
 
-const mensCatalog = [...products.slice(4, 11), products[1]];
+const mensCatalog = [...products.slice(1, 11), products[1]];
 
 const womensCatalog = products.slice(11, 15);
 
@@ -419,6 +310,14 @@ const footerData = [
     ],
   },
   {
+    id: "f_company",
+    title: "Company",
+    links: [
+      { text: "FutFusionX Blog", url: "/blog" },
+      { text: "Media", url: "/media" },
+    ],
+  },
+  {
     id: "f_more_info",
     title: "More info",
     links: [
@@ -427,7 +326,7 @@ const footerData = [
       { text: "Shipping Policy", url: "/shipping" },
       { text: "Sitemap", url: "/sitemap" },
     ],
-  },
+  }
 ];
 
 const cartItems = [
@@ -597,59 +496,64 @@ const servicesData = [
 
 const product_one = {
   id: "product_01",
-  title: "Raven Hoodie With Black Colored Design",
+  title: "US Polo Jeans With Black stripped Design",
   previewImages: [
     {
       id: "preview1",
-      imgSource: staticImages.preview1,
-    },
-    {
-      id: "preview2",
-      imgSource: staticImages.preview2,
-    },
-    {
-      id: "preview3",
-      imgSource: staticImages.preview3,
-    },
-    {
-      id: "preview4",
-      imgSource: staticImages.preview1,
-    },
-    {
-      id: "preview5",
-      imgSource: staticImages.preview2,
-    },
+      imgSource: staticImages.product1,
+    }
   ],
   rating: 3.5,
   comments_count: 120,
   sizes: ["xs", "s", "m", "l", "xl"],
   colors: ["#3C4242", "#EDD146", "#EB84B0", "#9C1F35"],
-  price: 63.0,
+  price: 250.0,
 };
 
-const productDescriptionTabHeads = [
-  {
-    id: "tab-description",
-    tabHead: "tabDescription",
-    tabText: "Description",
-    badgeValue: null,
-    badgeColor: "",
-  },
-  {
-    id: "tab-comments",
-    tabHead: "tabComments",
-    tabText: "User Comments",
-    badgeValue: 10,
-    badgeColor: "purple",
-  },
-  {
-    id: "tab-QNA",
-    tabHead: "tabQNA",
-    tabText: "Question & Answer",
-    badgeValue: 4,
-    badgeColor: "outerspace",
-  },
-];
+const product_two = {
+  id: "product_02",
+  title: "Peter England T-Shirt",
+  previewImages: [
+    {
+      id: "preview1",
+      imgSource: staticImages.product2,
+    }
+  ],
+  rating: 3.0,
+  sizes: ["s", "m", "l", "xl"],
+  colors: ["#3C4242", "#EDD146", "#EB84B0", "#9C1F35"],
+  price: 500.0,
+};
+
+const product_three = {
+  id: "product_02",
+  title: "Tommy Hilfiger T-Shirt",
+  previewImages: [
+    {
+      id: "preview1",
+      imgSource: staticImages.product3,
+    }
+  ],
+  rating: 4.5,
+  sizes: ["s", "m", "l"],
+  colors: ["#3C4242", "#EDD146", "#EB84B0"],
+  price: 450.0,
+};
+
+const product_four = {
+  id: "product_02",
+  title: "Levis Women T-Shirt",
+  previewImages: [
+    {
+      id: "preview1",
+      imgSource: staticImages.product4,
+    }
+  ],
+  rating: 4.7,
+  sizes: ["s", "m", "l", "xl"],
+  colors: ["#3C4242", "#EDD146", "#EB84B0", "#9C1F35"],
+  price: 550.0,
+};
 
 const orderData = [
   {
@@ -825,7 +729,9 @@ export {
   pricingData,
   servicesData,
   product_one,
-  productDescriptionTabHeads,
+  product_two,
+  product_three,
+  product_four,
   orderData,
   wishlistData,
   recentViewedData,

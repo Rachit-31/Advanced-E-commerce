@@ -63,11 +63,11 @@ const SignUpScreen = () => {
         <Container>
           <div className="form-grid-content">
             <div className="form-grid-left">
-              {/* <img
+              <img
                 src={staticImages.form_img2}
                 className="object-fit-cover"
                 alt=""
-              /> */}
+              />
             </div>
             <div className="form-grid-right">
               <FormTitle>
@@ -76,7 +76,6 @@ const SignUpScreen = () => {
                   Sign up for free to access to in any of our products
                 </p>
               </FormTitle>
-              <AuthOptions />
               <form onSubmit={handleSignup}>
                 <FormElement>
                   <label htmlFor="" className="forme-elem-label">

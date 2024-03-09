@@ -11,6 +11,7 @@ import { breakpoints, defaultTheme } from "../../styles/themes/default";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const WishListScreenWrapper = styled.main`
   .wishlist {
@@ -165,13 +166,11 @@ const WishListScreen = () => {
                     navigate("/sign_in");
                     toast.error("Please Log In first!");
                 }
-                const response = await axios.get("http://localhost:3000/profile", {
+                const response = await axios.get("http://localhost:3000/api/profile", {
                     headers: {
                         Authorization: token
                     }
                 });
-                console.log(response.data.user);
-                setUser(response.data.user);
             }
             catch (err) {
                 console.log("Error:", err);

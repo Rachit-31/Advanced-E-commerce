@@ -1,8 +1,8 @@
 import logo from "../assets/images/logo.png";
 
 // forms images
-import form_img1 from "../assets/images/form_img1.png";
-import form_img2 from "../assets/images/form_img2.png";
+import form_img1 from "../assets/images/signin.jpg";
+import form_img2 from "../assets/images/fb-clothing-try-on.jpg";
 import form_img3 from "../assets/images/form_img3.png";
 import form_img4 from "../assets/images/form_img4.png";
 import form_img5 from "../assets/images/form_img5.png";

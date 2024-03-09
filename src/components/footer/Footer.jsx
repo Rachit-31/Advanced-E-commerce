@@ -172,7 +172,7 @@ const Footer = () => {
           <p className="text-base text-white">
             Copyright &copy; 2024 &nbsp;
             <Link to="/" className="text-white">
-              Achats site
+              FitFusionX site
             </Link>
             &nbsp;. All rights reserved.
           </p>

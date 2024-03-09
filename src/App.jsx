@@ -24,6 +24,9 @@ import WishListEmpty from "./screens/user/WishListEmptyScreen";
 import Confirm from "./screens/user/ConfirmScreen";
 import Account from "./screens/user/AccountScreen";
 import Address from "./screens/user/AddressScreen";
+import ProductDetailsScreen2 from "./screens/product/ProductDetailsScreen2";
+import ProductDetailsScreen3 from "./screens/product/ProductDetailsScreen3";
+import ProductDetailsScreen4 from "./screens/product/ProductDetailsScreen4";
 
 function App() {
   return (
@@ -35,7 +38,10 @@ function App() {
           <Route path="/" element={<BaseLayout />}>
             <Route index element={<Home />} />
             <Route path="/product" element={<ProductList />} />
-            <Route path="/product/details" element={<ProductDetails />} />
+            <Route path="/product/details/1" element={<ProductDetails />} />
+            <Route path="/product/details/2" element={<ProductDetailsScreen2 />} />
+            <Route path="/product/details/3" element={<ProductDetailsScreen3 />} />
+            <Route path="/product/details/4" element={<ProductDetailsScreen4 />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/empty_cart" element={<CartEmpty />} />
             <Route path="/checkout" element={<Checkout />} />
